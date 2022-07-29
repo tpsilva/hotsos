@@ -1,7 +1,7 @@
 on:
   workflow_run:
     workflows: [Test]
-    branches: [autosnap]
+    branches: [main]
     types: [completed]
 name: publish
 jobs:
