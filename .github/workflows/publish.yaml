@@ -1,12 +1,12 @@
 on:
   workflow_run:
-    workflows: ["Test"]
+    workflows: [Test]
     branches: [autosnap]
     types: [completed]
 name: publish
 jobs:
   build:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    #if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
