@@ -19,6 +19,3 @@ jobs:
       with:
         snap: ${{ steps.build.outputs.snap }}
         release: edge
-
-
-workflow_run.workflow.
