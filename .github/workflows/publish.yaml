@@ -4,6 +4,7 @@ on:
 name: publish
 jobs:
   build:
+    needs: test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -14,4 +15,4 @@ jobs:
         SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.STORE_LOGIN }}
       with:
         snap: ${{ steps.build.outputs.snap }}
-        release: stable
+        release: edge
