@@ -1,11 +1,10 @@
-name: hotsos
+name: hotsos-build
 version: '1.0'
 summary: Collect application operational information.
 description:
   Software analysis toolkit. Define checks in high-level
   language and leverage library to perform analysis of
   common Cloud applications.
-confinement: classic
 grade: stable
 base: core20
 environment:
