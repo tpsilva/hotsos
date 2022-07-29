@@ -5,9 +5,13 @@ on:
     types: [completed]
 name: publish
 jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      shell: bash
+      run: echo "${{ github.workflow_run.workflow }}"
   build:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    if: ${{ github.workflow_run.workflow.event == 'push' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
