@@ -5,11 +5,15 @@ on:
     types: [completed]
 name: publish
 jobs:
-  echo:
+  printJob:    
+    name: Print event
     runs-on: ubuntu-latest
     steps:
-      shell: bash
-      run: echo "${{ github.workflow_run.workflow }}"
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
   build:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
